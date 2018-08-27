@@ -1,0 +1,70 @@
+@import "./../constants";
+
+
+$TAB_BASE_P: 1rem;
+$TAB_BASE_BGC: silver;
+
+$TAB_HEADER_BGC: lightgray;
+
+$TAB_HEADER_ITEM_P: 1rem 1.5rem;
+$TAB_HEADER_ITEM_COLOR: white;
+
+$TAB_ACTIVE_HEADER_ITEM_BGC: brown;
+$TAB_ACTIVE_HEADER_ITEM_COLOR: lightgray;
+
+$TAB_CONTENT_BGC: white;
+$TAB_CONTENT_P: 1rem;
+
+.tabs{
+
+  &_base{
+    padding: $TAB_BASE_P;
+    background-color: $TAB_BASE_BGC;
+  }
+
+  &__header{
+    &_base{
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $TAB_HEADER_BGC;
+    }
+  }
+
+  &__content{
+    &_base{
+      background-color: $TAB_CONTENT_BGC;
+      padding: $TAB_CONTENT_P;
+    }
+  }
+
+  &__header-item{
+    &_base{
+      padding: $TAB_HEADER_ITEM_P;
+      cursor: pointer;
+      color: $TAB_HEADER_ITEM_COLOR;
+    }
+
+    &_active{
+      color: $TAB_ACTIVE_HEADER_ITEM_COLOR;
+      background-color: $TAB_ACTIVE_HEADER_ITEM_BGC;
+    }
+  }
+
+  &__content-item{
+    &_base{
+      display: none;
+
+    }
+
+    &_active{
+      display: block;
+      animation: fadeOut 1s;
+    }
+  }
+
+}
+
+@keyframes fadeOut {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
